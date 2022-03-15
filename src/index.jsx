@@ -10,6 +10,8 @@ import Error404 from './pages/404'
 import APropos from './pages/A-Propos'
 import Logement from './pages/Logement'
 
+import './style.css'
+
 ReactDOM.render(
 	<React.StrictMode>
 		<Router>
