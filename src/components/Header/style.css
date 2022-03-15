@@ -1,0 +1,26 @@
+.nav {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 10px;
+}
+
+.nav a {
+	font-weight: 500;
+	font-size: 12px;
+	-webkit-text-decoration-line: none;
+	text-decoration-line: none;
+	color: #ff6060;
+	margin-right: 10px;
+}
+
+.nav-wrapper {
+	padding: 20px;
+	position: relative;
+}
+
+.nav-wrapper img {
+	height: 43px;
+}
