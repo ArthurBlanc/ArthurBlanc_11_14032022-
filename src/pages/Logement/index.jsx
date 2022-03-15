@@ -1,6 +1,11 @@
 import { useParams } from 'react-router-dom'
 import logement from '../../assets/logements.json'
 
+import Tag from '../../components/Tag'
+import Accordion from '../../components/Accordion'
+
+import './style.css'
+
 function Logement() {
 	let params = useParams()
 	let logementFiltered = logement.filter(
@@ -9,36 +14,21 @@ function Logement() {
 	let thisLogement = logementFiltered[0]
 
 	return (
-		<div>
-			<h2>{thisLogement.title}</h2>
-			<p>Cover : {thisLogement.cover}</p>
-			Pictures :
-			<ul>
-				{thisLogement.pictures.map((picture, index) => (
-					<li key={`${picture}-${index}`}>{picture}</li>
-				))}
-			</ul>
-			<p>Description : {thisLogement.description}</p>
-			Host :
-			<ul>
-				<li>Name : {thisLogement.host.name}</li>
-				<li>Picture :{thisLogement.host.picture}</li>
-			</ul>
+		<section>
+			{thisLogement.pictures.map((picture, index) => (
+				<img src={picture} key={`${picture}-${index}`} />
+			))}
+			<h2 className="logement-title">{thisLogement.title}</h2>
+			<p className="logement-location">{thisLogement.location}</p>
+			{thisLogement.tags.map((tag, index) => (
+				<Tag tagName={tag} key={`${tag}-${index}`} />
+			))}
 			<p>Rating : {thisLogement.rating}</p>
-			<p>Location : {thisLogement.location}</p>
-			Equipements :
-			<ul>
-				{thisLogement.equipments.map((equipment, index) => (
-					<li key={`${equipment}-${index}`}>{equipment}</li>
-				))}
-			</ul>
-			Tags :
-			<ul>
-				{thisLogement.tags.map((tag, index) => (
-					<li key={`${tag}-${index}`}>{tag}</li>
-				))}
-			</ul>
-		</div>
+			<span className="host-name">{thisLogement.host.name}</span>
+			<img className="host-picture" src={thisLogement.host.picture} />
+			<Accordion title="Description" content={thisLogement.description} />
+			<Accordion title="Equipements" content={thisLogement.equipments} />
+		</section>
 	)
 }
 

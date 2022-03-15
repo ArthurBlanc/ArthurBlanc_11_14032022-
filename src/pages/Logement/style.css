@@ -1,0 +1,26 @@
+.logement-title {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 142.6%;
+	color: #ff6060;
+}
+
+.logement-location {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 142.6%;
+	color: #ff6060;
+}
+
+.host-picture {
+	width: 32px;
+	height: 32px;
+	border-radius: 100%;
+}
+
+.host-name {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 142.6%;
+	color: #ff6060;
+}
