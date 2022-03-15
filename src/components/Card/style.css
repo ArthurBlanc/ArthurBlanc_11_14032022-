@@ -1,0 +1,27 @@
+.card {
+	position: relative;
+	margin: 0 auto;
+	width: 335px;
+	margin-bottom: 20px;
+}
+
+.card-cover-wrapper img {
+	width: 335px;
+	height: 255px;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 10px;
+	-webkit-filter: brightness(70%);
+	filter: brightness(70%);
+}
+
+.card-title {
+	position: absolute;
+	font-weight: 500;
+	font-size: 18px;
+	color: #ffffff;
+	z-index: 1;
+	bottom: 15px;
+	left: 20px;
+	line-height: 142.6%;
+}

@@ -1,19 +1,26 @@
-import { Link } from 'react-router-dom'
 import logement from '../../assets/logements.json'
+import Card from '../../components/Card'
+import homeBanner from '../../assets/home-banner.jpg'
+import './style.css'
 
 function Home() {
 	return (
 		<div>
-			<h2>Home</h2>
-			<ul>
-				{logement.map((logement) => (
-					<li key={`${logement.title}-${logement.id}`}>
-						<Link to={`/logement/${logement.id}`}>
-							{logement.title}
-						</Link>
-					</li>
-				))}
-			</ul>
+			<div className="banner">
+				<img src={homeBanner} className="banner-img" />
+				<span className="banner-title">
+					Chez vous, partout et ailleurs
+				</span>
+			</div>
+
+			{logement.map((logement) => (
+				<Card
+					key={`${logement.title}-${logement.id}`}
+					link={`/logement/${logement.id}`}
+					title={logement.title}
+					cover={logement.cover}
+				/>
+			))}
 		</div>
 	)
 }
