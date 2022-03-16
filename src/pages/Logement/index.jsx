@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import logement from '../../assets/logements.json'
 
+import ImageSlider from '../../components/ImageSlider'
 import Tag from '../../components/Tag'
 import Rating from '../../components/Rating'
 import Accordion from '../../components/Accordion'
@@ -16,9 +17,7 @@ function Logement() {
 
 	return (
 		<section>
-			{thisLogement.pictures.map((picture, index) => (
-				<img src={picture} key={`${picture}-${index}`} />
-			))}
+			<ImageSlider images={thisLogement.pictures} />
 			<h2 className="logement-title">{thisLogement.title}</h2>
 			<p className="logement-location">{thisLogement.location}</p>
 			{thisLogement.tags.map((tag, index) => (
