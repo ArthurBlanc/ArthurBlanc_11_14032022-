@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import logement from '../../assets/logements.json'
 
 import Tag from '../../components/Tag'
+import Rating from '../../components/Rating'
 import Accordion from '../../components/Accordion'
 
 import './style.css'
@@ -23,7 +24,7 @@ function Logement() {
 			{thisLogement.tags.map((tag, index) => (
 				<Tag tagName={tag} key={`${tag}-${index}`} />
 			))}
-			<p>Rating : {thisLogement.rating}</p>
+			<Rating rating={thisLogement.rating} />
 			<span className="host-name">{thisLogement.host.name}</span>
 			<img className="host-picture" src={thisLogement.host.picture} />
 			<Accordion title="Description" content={thisLogement.description} />
