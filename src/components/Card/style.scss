@@ -1,0 +1,49 @@
+@import '../../variables.scss';
+
+/* ---------------------------------------- */
+/* ==                CARD                 */
+/*---------------------------------------- */
+.card {
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 1.25rem;
+	transform: scale(1);
+	transition-duration: 0.5s;
+	@include desktop-breakpoint {
+		position: static;
+		margin: 0;
+	}
+	&:hover {
+		transform: scale(1.05);
+		transition-duration: 0.5s;
+	}
+	&-cover-wrapper img {
+		width: 100%;
+		object-fit: cover;
+		border-radius: 0.625rem;
+		filter: brightness(70%);
+	}
+	&-title {
+		z-index: 1;
+		position: absolute;
+		bottom: 1rem;
+		padding-right: 1.25rem;
+		padding-left: 1.25rem;
+		color: #ffffff;
+		font-size: 1.125rem;
+		font-weight: 500;
+		line-height: 142.6%;
+		@include desktop-breakpoint {
+			bottom: 1.25rem;
+		}
+	}
+}
+
+.card,
+.card-cover-wrapper img {
+	height: 15.9375rem;
+	@include desktop-breakpoint {
+		width: 21.25rem;
+		height: 21.25rem;
+	}
+}

@@ -1,6 +1,6 @@
 import emptyStar from '../../assets/emptyStar.svg'
 import star from '../../assets/star.svg'
-import './style.css'
+import './style.scss'
 
 function Rating({ rating }) {
 	const totalStar = 5
@@ -19,7 +19,7 @@ function Rating({ rating }) {
 			))}
 			{[...Array(emptyStarNumber)].map((e, i) => (
 				<img
-					className="star"
+					className="star-empty"
 					key={i}
 					src={emptyStar}
 					alt="Empty Star Rating"

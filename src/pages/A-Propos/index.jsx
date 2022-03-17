@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import Accordion from '../../components/Accordion'
 import aproposBanner from '../../assets/apropos-banner.jpg'
-import './style.css'
+import './style.scss'
 
 function APropos() {
 	useEffect(() => {
@@ -11,13 +11,13 @@ function APropos() {
 
 	return (
 		<section className="apropos-section">
-			<div className="banner">
+			<h1 className="banner">
 				<img
 					src={aproposBanner}
 					className="banner-img apropos-banner"
 					alt="Banner"
 				/>
-			</div>
+			</h1>
 			<Accordion
 				title="Fiabilité"
 				content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées  par nos équipes."

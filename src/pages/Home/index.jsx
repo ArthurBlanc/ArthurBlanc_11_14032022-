@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import logement from '../../assets/logements.json'
 import Card from '../../components/Card'
 import homeBanner from '../../assets/home-banner.jpg'
-import './style.css'
+import './style.scss'
 
 function Home() {
 	useEffect(() => {
@@ -14,9 +14,7 @@ function Home() {
 		<section className="home">
 			<div className="banner">
 				<img src={homeBanner} className="banner-img" alt="Banner" />
-				<span className="banner-title">
-					Chez vous, partout et ailleurs
-				</span>
+				<h1 className="banner-title">Chez vous, partout et ailleurs</h1>
 			</div>
 			<div className="card-wrapper">
 				{logement.map((logement) => (

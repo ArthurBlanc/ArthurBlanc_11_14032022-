@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import chevron from '../../assets/chevron.svg'
 
-import './style.css'
+import './style.scss'
 
 function Accordion(props) {
 	const [setActive, setActiveState] = useState('')
@@ -37,7 +37,7 @@ function Accordion(props) {
 				className={`accordion ${setActive}`}
 				onClick={toggleAccordion}
 			>
-				<p className="accordion__title">{props.title}</p>
+				<span className="accordion__title">{props.title}</span>
 				<img src={chevron} className={`${setRotate}`} alt="" />
 			</button>
 			<div

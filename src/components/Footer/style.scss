@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+/* ---------------------------------------- */
+/* ==                FOOTER                 */
+/*---------------------------------------- */
+.footer {
+	&-wrapper {
+		height: 12.5rem;
+		margin-top: auto;
+		background-color: #000000;
+		color: #ffffff;
+		text-align: center;
+	}
+	&-logo {
+		height: 2.25rem;
+		margin-top: 3.75rem;
+		@include recolor(#fff, 1);
+	}
+	&-credit {
+		margin-top: 2.5rem;
+		font-size: 0.75rem;
+		font-weight: 500;
+		@include desktop-breakpoint {
+			margin-top: 1.9375rem;
+			font-size: 1.5rem;
+		}
+	}
+}

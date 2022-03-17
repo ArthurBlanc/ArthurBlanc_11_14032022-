@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 
 function Tag({ tagName }) {
 	return <div className="tag">{tagName}</div>

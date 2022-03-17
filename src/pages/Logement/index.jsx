@@ -8,7 +8,7 @@ import Tag from '../../components/Tag'
 import Rating from '../../components/Rating'
 import Accordion from '../../components/Accordion'
 
-import './style.css'
+import './style.scss'
 
 function Logement() {
 	let params = useParams()
@@ -37,7 +37,7 @@ function Logement() {
 			<ImageSlider images={thisLogement.pictures} />
 			<div className="logement-info-rating-host-wrapper">
 				<div className="logement-info-wrapper">
-					<h2 className="logement-title">{thisLogement.title}</h2>
+					<h1 className="logement-title">{thisLogement.title}</h1>
 					<p className="logement-location">{thisLogement.location}</p>
 					<div className="tag-wrapper">
 						{thisLogement.tags.map((tag, index) => (

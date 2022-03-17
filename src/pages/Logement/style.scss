@@ -1,0 +1,138 @@
+@import '../../variables.scss';
+
+/* ---------------------------------------- */
+/* ==              LOGEMENT               */
+/*---------------------------------------- */
+.logement {
+	&-title {
+		margin-top: 0.9375rem;
+		margin-bottom: 0;
+		color: $primary-color;
+		font-size: 1.125rem;
+		font-weight: 500;
+		line-height: 142.6%;
+		@include desktop-breakpoint {
+			font-size: 2.25rem;
+		}
+	}
+	&-location {
+		margin-top: 0.3125rem;
+		margin-bottom: 0;
+		color: $primary-color;
+		font-size: 0.875rem;
+		font-weight: 500;
+		line-height: 142.6%;
+		@include desktop-breakpoint {
+			margin-bottom: 1.25rem;
+			font-size: 1.125rem;
+		}
+	}
+	&-info {
+		&-wrapper {
+			@include desktop-breakpoint {
+				width: 60%;
+			}
+		}
+		&-rating-host-wrapper {
+			@include desktop-breakpoint {
+				display: flex;
+				margin-top: 1.875rem;
+				margin-bottom: 1.625rem;
+			}
+		}
+	}
+}
+
+.tag-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.rating {
+	&-wrapper {
+		@include desktop-breakpoint {
+			order: 2;
+		}
+	}
+	&-host-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		@include desktop-breakpoint {
+			flex-direction: column;
+			align-items: flex-end;
+			width: 40%;
+			margin-bottom: 0;
+		}
+	}
+}
+.host {
+	&-wrapper {
+		display: flex;
+		align-items: center;
+		@include desktop-breakpoint {
+			order: 1;
+			margin-bottom: 1.5rem;
+		}
+	}
+	&-name {
+		margin-right: 0.75rem;
+		color: $primary-color;
+		font-size: 0.75rem;
+		font-weight: 500;
+		text-align: end;
+		@include desktop-breakpoint {
+			height: 4rem;
+			font-size: 1.125rem;
+			line-height: 150%;
+		}
+	}
+	&-picture {
+		width: 2rem;
+		height: 2rem;
+		border-radius: 100%;
+		@include desktop-breakpoint {
+			width: 4rem;
+			height: 4rem;
+		}
+	}
+}
+
+.description-equipments-wrapper {
+	@include desktop-breakpoint {
+		display: flex;
+		justify-content: space-between;
+	}
+	.accordion {
+		@include desktop-breakpoint {
+			border-radius: 0.625rem;
+		}
+		&__section {
+			@include desktop-breakpoint {
+				width: 47%;
+				padding: 0;
+			}
+		}
+		&__title {
+			@include desktop-breakpoint {
+				font-size: 1.125rem;
+			}
+		}
+		&__icon {
+			@include desktop-breakpoint {
+				margin-right: 0.75rem;
+			}
+		}
+		&__text {
+			@include desktop-breakpoint {
+				padding-top: 1.875rem;
+				padding-right: 1.25rem;
+				padding-bottom: 1.875rem;
+				padding-left: 1.25rem;
+				font-size: 1.125rem;
+			}
+		}
+	}
+}

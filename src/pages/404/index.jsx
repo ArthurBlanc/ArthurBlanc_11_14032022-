@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
-import './style.css'
+import './style.scss'
 
 function Error404() {
 	useEffect(() => {
@@ -10,11 +10,11 @@ function Error404() {
 
 	return (
 		<section className="error404">
-			<h2 className="error404-title">404</h2>
-			<p className="error404-subtitle">
+			<h1 className="error404-title">404</h1>
+			<h2 className="error404-subtitle">
 				Oups! La page que <br className="error404-subtitle-br" />
 				vous demandez n'existe pas.
-			</p>
+			</h2>
 			<Link className="error404-link" to="/">
 				Retourner sur la page d'accueil
 			</Link>

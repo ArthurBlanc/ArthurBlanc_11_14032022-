@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
-import './style.css'
+import './style.scss'
 
 function Card(props) {
 	return (
 		<div className="card">
 			<Link to={props.link}>
 				<div className="card-cover-wrapper">
-					<img src={props.cover} alt={props.title} />
+					<img src={props.cover} alt="" />
 				</div>
-				<span className="card-title">{props.title}</span>
+				<h2 className="card-title">{props.title}</h2>
 			</Link>
 		</div>
 	)

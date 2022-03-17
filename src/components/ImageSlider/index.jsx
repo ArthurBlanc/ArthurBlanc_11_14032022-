@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import sliderPrevious from '../../assets/sliderPrevious.svg'
 import sliderNext from '../../assets/sliderNext.svg'
-import './style.css'
+import './style.scss'
 
-function ImageSlider({ images }) {
+function ImageSlider({ images, alt }) {
 	const [current, setCurrent] = useState(0)
 	const length = images.length
 
@@ -46,7 +46,7 @@ function ImageSlider({ images }) {
 						{index === current && (
 							<img
 								src={slider}
-								alt="travel img"
+								alt={'slide ' + (parseInt(index) + 1)}
 								className="image"
 							/>
 						)}

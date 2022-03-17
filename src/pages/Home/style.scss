@@ -1,0 +1,68 @@
+@import '../../variables.scss';
+
+/* ---------------------------------------- */
+/* ==                HOME                 */
+/*---------------------------------------- */
+.banner {
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 1.375rem;
+	@include desktop-breakpoint {
+		margin-bottom: 2.6875rem;
+	}
+	&-img {
+		width: 100%;
+		height: 6.9375rem;
+		object-fit: cover;
+		border-radius: 0.625rem;
+		filter: brightness(70%);
+		@include desktop-breakpoint {
+			height: 13.9375rem;
+		}
+	}
+	&-title {
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		top: 50%;
+		left: 1rem;
+		width: 66%;
+		transform: translateY(-50%);
+		color: #ffffff;
+		font-size: 1.5rem;
+		font-weight: 500;
+		line-height: 100%;
+		@include desktop-breakpoint {
+			width: 100%;
+			font-size: 3rem;
+			text-align: center;
+		}
+	}
+}
+
+.home {
+	@include desktop-breakpoint {
+		padding-bottom: 2.6875rem;
+	}
+}
+
+.card-wrapper {
+	@include desktop-breakpoint {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-evenly;
+		margin: 0 auto;
+		padding-top: 3.5rem;
+		padding-bottom: 0;
+		row-gap: 3.125rem;
+		border-radius: 1.5625rem;
+		background: #f7f7f7;
+	}
+}
+
+.filling-empty-space-child {
+	@include desktop-breakpoint {
+		width: 21.25rem;
+		height: 0;
+	}
+}
