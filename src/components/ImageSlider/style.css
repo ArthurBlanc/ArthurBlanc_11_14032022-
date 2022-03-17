@@ -53,3 +53,28 @@
 	-o-transition-duration: 1s;
 	transition-duration: 1s;
 }
+
+@media only screen and (min-width: 768px) {
+	.slider {
+		height: 25.9375rem;
+	}
+
+	.image {
+		height: 25.9375rem;
+	}
+
+	.right-arrow,
+	.left-arrow {
+		top: 9.75rem;
+		width: 2.875rem;
+		height: 5rem;
+	}
+
+	.right-arrow {
+		right: 1.5rem;
+	}
+
+	.left-arrow {
+		left: 1.5rem;
+	}
+}

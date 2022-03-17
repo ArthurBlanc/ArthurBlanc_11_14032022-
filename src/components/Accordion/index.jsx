@@ -38,7 +38,7 @@ function Accordion(props) {
 				onClick={toggleAccordion}
 			>
 				<p className="accordion__title">{props.title}</p>
-				<img src={chevron} className={`${setRotate}`} />
+				<img src={chevron} className={`${setRotate}`} alt="" />
 			</button>
 			<div
 				ref={content}

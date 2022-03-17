@@ -8,12 +8,22 @@ function Rating({ rating }) {
 	const emptyStarNumber = totalStar - starNumber
 
 	return (
-		<div>
+		<div className="rating-wrapper">
 			{[...Array(starNumber)].map((e, i) => (
-				<img className="star" key={i} src={star} />
+				<img
+					className="star"
+					key={i}
+					src={star}
+					alt="Full Star Rating"
+				/>
 			))}
 			{[...Array(emptyStarNumber)].map((e, i) => (
-				<img className="star" key={i} src={emptyStar} />
+				<img
+					className="star"
+					key={i}
+					src={emptyStar}
+					alt="Empty Star Rating"
+				/>
 			))}
 		</div>
 	)

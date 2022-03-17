@@ -3,3 +3,11 @@
 	height: 0.9375rem;
 	margin-right: 0.3125rem;
 }
+
+@media only screen and (min-width: 768px) {
+	.star {
+		width: 1.875rem;
+		height: 1.875rem;
+		margin-right: 0.625rem;
+	}
+}

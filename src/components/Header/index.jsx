@@ -7,7 +7,7 @@ function Header() {
 	return (
 		<header className="nav-wrapper">
 			<Link to="/">
-				<img src={logo} />
+				<img src={logo} alt="Kasa Logo" />
 			</Link>
 			<nav className="nav">
 				<NavLink

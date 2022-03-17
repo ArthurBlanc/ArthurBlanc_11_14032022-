@@ -26,6 +26,7 @@ function ImageSlider({ images }) {
 					src={sliderPrevious}
 					className="left-arrow"
 					onClick={previousSlide}
+					alt="Previous Arrow"
 				/>
 			) : null}
 			{length > 1 ? (
@@ -33,6 +34,7 @@ function ImageSlider({ images }) {
 					src={sliderNext}
 					className="right-arrow"
 					onClick={nextSlide}
+					alt="Next Arrow"
 				/>
 			) : null}
 			{images.map((slider, index) => {

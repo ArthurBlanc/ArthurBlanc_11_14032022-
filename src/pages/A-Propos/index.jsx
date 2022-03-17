@@ -15,6 +15,7 @@ function APropos() {
 				<img
 					src={aproposBanner}
 					className="banner-img apropos-banner"
+					alt="Banner"
 				/>
 			</div>
 			<Accordion

@@ -6,7 +6,7 @@ function Card(props) {
 		<div className="card">
 			<Link to={props.link}>
 				<div className="card-cover-wrapper">
-					<img src={props.cover} />
+					<img src={props.cover} alt={props.title} />
 				</div>
 				<span className="card-title">{props.title}</span>
 			</Link>

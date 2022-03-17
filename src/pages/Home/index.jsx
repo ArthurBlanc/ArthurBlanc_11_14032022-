@@ -13,7 +13,7 @@ function Home() {
 	return (
 		<section className="home">
 			<div className="banner">
-				<img src={homeBanner} className="banner-img" />
+				<img src={homeBanner} className="banner-img" alt="Banner" />
 				<span className="banner-title">
 					Chez vous, partout et ailleurs
 				</span>
@@ -27,6 +27,8 @@ function Home() {
 						cover={logement.cover}
 					/>
 				))}
+				<div className="filling-empty-space-child"></div>
+				<div className="filling-empty-space-child"></div>
 			</div>
 		</section>
 	)
