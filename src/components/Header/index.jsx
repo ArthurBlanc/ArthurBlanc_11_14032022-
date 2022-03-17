@@ -1,16 +1,33 @@
+import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import './style.css'
 
 function Header() {
 	return (
-		<div className="nav-wrapper">
-			<img src={logo} />
+		<header className="nav-wrapper">
+			<Link to="/">
+				<img src={logo} />
+			</Link>
 			<nav className="nav">
-				<Link to="/">ACCUEIL</Link>
-				<Link to="/a-propos">A PROPOS</Link>
+				<NavLink
+					className={({ isActive }) =>
+						isActive ? 'nav-active' : 'nav-link'
+					}
+					to="/"
+				>
+					Accueil
+				</NavLink>
+				<NavLink
+					className={({ isActive }) =>
+						isActive ? 'nav-active' : 'nav-link'
+					}
+					to="/a-propos"
+				>
+					A Propos
+				</NavLink>
 			</nav>
-		</div>
+		</header>
 	)
 }
 

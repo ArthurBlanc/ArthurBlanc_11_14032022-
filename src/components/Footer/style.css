@@ -1,17 +1,18 @@
 .footer-wrapper {
-	text-align: center;
-	color: #ffffff;
-	height: 200px;
+	height: 12.5rem;
+	margin-top: auto;
 	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
 }
 
 .footer-logo {
-	margin-top: 60px;
-	height: 36px;
+	height: 2.25rem;
+	margin-top: 3.75rem;
 }
 
 .footer-credit {
-	margin-top: 40px;
+	margin-top: 2.5rem;
+	font-size: 0.75rem;
 	font-weight: 500;
-	font-size: 12px;
 }

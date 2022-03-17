@@ -1,8 +1,14 @@
+import { useEffect } from 'react'
+
 import Accordion from '../../components/Accordion'
 import aproposBanner from '../../assets/apropos-banner.jpg'
 import './style.css'
 
 function APropos() {
+	useEffect(() => {
+		document.title = 'A Propos - Kasa'
+	}, [])
+
 	return (
 		<section className="apropos-section">
 			<div className="banner">

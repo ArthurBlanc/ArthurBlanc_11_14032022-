@@ -3,33 +3,31 @@
 }
 
 .error404-title {
-	margin-top: 120px;
-	font-weight: 700;
-	font-size: 96px;
-	line-height: 142.6%;
+	margin-top: 6rem;
+	margin-bottom: 0.6875rem;
 	color: #ff6060;
+	font-size: 6rem;
+	font-weight: 700;
+	line-height: 142.6%;
 }
 
 .error404-subtitle {
-	margin-top: 10px;
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 142.6%;
-	color: #ff6060;
 	margin: 0 auto;
-}
-
-.error404-subtitle-br {
+	margin-top: 0.625rem;
+	color: #ff6060;
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 142.6%;
 }
 
 .error404-link {
 	display: block;
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-top: 5.5rem;
+	margin-bottom: 5.5rem;
+	color: #ff6060;
+	font-size: 0.875rem;
 	font-weight: 500;
-	font-size: 14px;
 	line-height: 142.6%;
 	-webkit-text-decoration-line: underline;
 	text-decoration-line: underline;
-	color: #ff6060;
 }

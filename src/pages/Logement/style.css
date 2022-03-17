@@ -1,26 +1,62 @@
 .logement-title {
-	font-weight: 500;
-	font-size: 18px;
-	line-height: 142.6%;
+	margin-top: 0.9375rem;
+	margin-bottom: 0;
 	color: #ff6060;
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 142.6%;
 }
 
 .logement-location {
-	font-weight: 500;
-	font-size: 14px;
-	line-height: 142.6%;
+	margin-top: 0.3125rem;
+	margin-bottom: 0;
 	color: #ff6060;
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 142.6%;
 }
 
-.host-picture {
-	width: 32px;
-	height: 32px;
-	border-radius: 100%;
+.tag-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.rating-host-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+}
+
+.host-wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 }
 
 .host-name {
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 142.6%;
+	margin-right: 0.75rem;
 	color: #ff6060;
+	font-size: 0.75rem;
+	font-weight: 500;
+	text-align: end;
+}
+
+.host-picture {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 100%;
 }
