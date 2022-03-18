@@ -6,6 +6,7 @@ import homeBanner from '../../assets/home-banner.jpg'
 import './style.scss'
 
 function Home() {
+	/* This is a React Hook, changing the title of the page. */
 	useEffect(() => {
 		document.title = 'Accueil - Kasa'
 	}, [])

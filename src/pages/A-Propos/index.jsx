@@ -5,6 +5,7 @@ import aproposBanner from '../../assets/apropos-banner.jpg'
 import './style.scss'
 
 function APropos() {
+	/* This is a React Hook, changing the title of the page. */
 	useEffect(() => {
 		document.title = 'A Propos - Kasa'
 	}, [])

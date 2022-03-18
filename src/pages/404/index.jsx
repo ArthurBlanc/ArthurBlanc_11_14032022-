@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import './style.scss'
 
 function Error404() {
+	/* This is a React Hook, changing the title of the page. */
 	useEffect(() => {
 		document.title = '404 - Kasa'
 	}, [])

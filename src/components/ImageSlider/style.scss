@@ -40,6 +40,7 @@
 
 .right-arrow {
 	right: 0.3125rem;
+	transform: rotate(180deg);
 	@include desktop-breakpoint {
 		right: 1.5rem;
 	}

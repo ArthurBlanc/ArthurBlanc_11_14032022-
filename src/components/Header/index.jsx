@@ -10,6 +10,7 @@ function Header() {
 				<img src={logo} alt="Kasa Logo" className="nav-logo" />
 			</Link>
 			<nav className="nav">
+				{/* This is two React Router NavLink, that will change the active class depending on the current route. */}
 				<NavLink
 					className={({ isActive }) =>
 						isActive ? 'nav-active' : 'nav-link'

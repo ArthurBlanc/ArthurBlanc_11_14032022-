@@ -109,23 +109,23 @@
 		@include desktop-breakpoint {
 			border-radius: 0.625rem;
 		}
-		&__section {
+		&-section {
 			@include desktop-breakpoint {
 				width: 47%;
 				padding: 0;
 			}
 		}
-		&__title {
+		&-title {
 			@include desktop-breakpoint {
 				font-size: 1.125rem;
 			}
 		}
-		&__icon {
+		&-icon {
 			@include desktop-breakpoint {
 				margin-right: 0.75rem;
 			}
 		}
-		&__text {
+		&-text {
 			@include desktop-breakpoint {
 				padding-top: 1.875rem;
 				padding-right: 1.25rem;

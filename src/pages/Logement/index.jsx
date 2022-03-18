@@ -11,25 +11,32 @@ import Accordion from '../../components/Accordion'
 import './style.scss'
 
 function Logement() {
+	/* Fetching the id of the logement from the URL. */
 	let params = useParams()
+	/* To get the logement with the id that is in the URL. */
 	let logementFiltered = logement.filter(
 		(logement) => logement.id === params.logementId
 	)
 	let thisLogement = logementFiltered[0]
 
+	/* A React hook that allows you to navigate to a different page. */
 	let navigate = useNavigate()
 
 	useEffect(() => {
+		/* If thisLogement is undefined, navigate to 404 page. */
 		if (thisLogement === undefined) {
 			return navigate('/404')
 		}
+		/* This is a React Hook, changing the title of the page. */
 		document.title = thisLogement.title + ' - Kasa'
 	}, [thisLogement, navigate])
 
+	/* If thisLogement is undefined don't render the page. */
 	if (thisLogement === undefined) {
 		return null
 	}
 
+	/* Splitting the name of the host into firstName and lastName. */
 	let [firstName, lastName] = thisLogement.host.name.split(' ')
 
 	return (

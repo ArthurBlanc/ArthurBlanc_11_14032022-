@@ -17,9 +17,13 @@ ReactDOM.render(
 		<Router>
 			<Header />
 			<Routes>
+				{/* This is a route definition. It tells the router to match the URL `/` and render the `<Home />` component. */}
 				<Route exact path="/" element={<Home />} />
+				{/* It tells the router to match the URL `/a-propos` and render the `<APropos />` component. */}
 				<Route path="/a-propos" element={<APropos />} />
+				{/* It tells the router to match the URL `/logement/:logementId` and render the `<Logement />` component. */}
 				<Route path="/logement/:logementId" element={<Logement />} />
+				{/* It tells the router to match any URL and render the `<Error404 />` component. */}
 				<Route path="*" element={<Error404 />} />
 			</Routes>
 			<Footer />
