@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import logement from '../../assets/logements.json'
+import annonce from '../../assets/annonces.json'
 import Card from '../../components/Card'
 import homeBanner from '../../assets/home-banner.jpg'
 import './style.scss'
@@ -18,12 +18,12 @@ function Home() {
 				<h1 className="banner-title">Chez vous, partout et ailleurs</h1>
 			</div>
 			<div className="card-wrapper">
-				{logement.map((logement) => (
+				{annonce.map((annonce) => (
 					<Card
-						key={`${logement.title}-${logement.id}`}
-						link={`/logement/${logement.id}`}
-						title={logement.title}
-						cover={logement.cover}
+						key={`${annonce.title}-${annonce.id}`}
+						link={`/annonce/${annonce.id}`}
+						title={annonce.title}
+						cover={annonce.cover}
 					/>
 				))}
 				<div className="filling-empty-space-child"></div>

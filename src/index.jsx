@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Error404 from './pages/404'
 import APropos from './pages/A-Propos'
-import Logement from './pages/Logement'
+import Annonce from './pages/Annonce'
 
 import './style.scss'
 
@@ -21,8 +21,8 @@ ReactDOM.render(
 				<Route exact path="/" element={<Home />} />
 				{/* It tells the router to match the URL `/a-propos` and render the `<APropos />` component. */}
 				<Route path="/a-propos" element={<APropos />} />
-				{/* It tells the router to match the URL `/logement/:logementId` and render the `<Logement />` component. */}
-				<Route path="/logement/:logementId" element={<Logement />} />
+				{/* It tells the router to match the URL `/annonce/:annonceId` and render the `<Annonce />` component. */}
+				<Route path="/annonce/:annonceId" element={<Annonce />} />
 				{/* It tells the router to match any URL and render the `<Error404 />` component. */}
 				<Route path="*" element={<Error404 />} />
 			</Routes>
