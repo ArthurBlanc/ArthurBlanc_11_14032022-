@@ -83,6 +83,7 @@ section {
 		max-width: 1240px;
 		min-height: unset;
 		margin: 0 auto;
+		width: stretch;
 	}
 }
 
@@ -90,5 +91,4 @@ section {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	width: stretch;
 }
