@@ -1,9 +1,9 @@
 @import '../../variables.scss';
 
 /* ---------------------------------------- */
-/* ==           IMAGE SLIDER            */
+/* ==              GALLERY               */
 /*---------------------------------------- */
-.slider,
+.gallery,
 .image {
 	height: 15.9375rem;
 	@include desktop-breakpoint {
@@ -11,7 +11,7 @@
 	}
 }
 
-.slider {
+.gallery {
 	position: relative;
 }
 

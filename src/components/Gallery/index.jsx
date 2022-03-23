@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import sliderArrow from '../../assets/slider-arrow.svg'
 import './style.scss'
 
-function ImageSlider({ images }) {
+function Gallery({ images }) {
 	/* This is a React Hook that creates a state variable called `current` and sets it to 0. It also
 	creates a function called `setCurrent` that takes in a parameter called `value` and sets the
 	`current` state variable to the value passed in. */
@@ -34,7 +34,7 @@ function ImageSlider({ images }) {
 	}
 
 	return (
-		<div className="slider">
+		<div className="gallery">
 			{/* This is two ternary operator that checks if the length of the images array is greater than 1. If it
 			is, then it will render the arrow. Otherwise, it will not render the arrow. */}
 			{length > 1 ? (
@@ -76,4 +76,4 @@ function ImageSlider({ images }) {
 	)
 }
 
-export default ImageSlider
+export default Gallery

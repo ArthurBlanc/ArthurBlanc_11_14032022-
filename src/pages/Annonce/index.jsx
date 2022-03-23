@@ -3,10 +3,10 @@ import { useEffect } from 'react'
 
 import annonce from '../../assets/annonces.json'
 
-import ImageSlider from '../../components/ImageSlider'
+import Gallery from '../../components/Gallery'
 import Tag from '../../components/Tag'
 import Rating from '../../components/Rating'
-import Accordion from '../../components/Accordion'
+import Collapse from '../../components/Collapse'
 
 import './style.scss'
 
@@ -41,7 +41,7 @@ function Annonce() {
 
 	return (
 		<section>
-			<ImageSlider images={thisAnnonce.pictures} />
+			<Gallery images={thisAnnonce.pictures} />
 			<div className="annonce-info-rating-host-wrapper">
 				<div className="annonce-info-wrapper">
 					<h1 className="annonce-title">{thisAnnonce.title}</h1>
@@ -71,11 +71,11 @@ function Annonce() {
 			</div>
 
 			<div className="description-equipments-wrapper">
-				<Accordion
+				<Collapse
 					title="Description"
 					content={thisAnnonce.description}
 				/>
-				<Accordion
+				<Collapse
 					title="Équipements"
 					content={thisAnnonce.equipments}
 				/>

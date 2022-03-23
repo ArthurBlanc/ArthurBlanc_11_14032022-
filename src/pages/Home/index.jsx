@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 import annonce from '../../assets/annonces.json'
-import Card from '../../components/Card'
+import Thumb from '../../components/Thumb'
 import homeBanner from '../../assets/home-banner.jpg'
 import './style.scss'
 
@@ -17,9 +17,9 @@ function Home() {
 				<img src={homeBanner} className="banner-img" alt="Banner" />
 				<h1 className="banner-title">Chez vous, partout et ailleurs</h1>
 			</div>
-			<div className="card-wrapper">
+			<div className="thumb-wrapper">
 				{annonce.map((annonce) => (
-					<Card
+					<Thumb
 						key={`${annonce.title}-${annonce.id}`}
 						link={`/annonce/${annonce.id}`}
 						title={annonce.title}

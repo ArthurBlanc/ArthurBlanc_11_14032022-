@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom'
 import './style.scss'
 
-function Card(props) {
+function Thumb(props) {
 	return (
-		<div className="card">
+		<div className="thumb">
 			<Link to={props.link}>
-				<div className="card-cover-wrapper">
+				<div className="thumb-cover-wrapper">
 					<img src={props.cover} alt="" />
 				</div>
-				<h2 className="card-title">{props.title}</h2>
+				<h2 className="thumb-title">{props.title}</h2>
 			</Link>
 		</div>
 	)
 }
 
-export default Card
+export default Thumb

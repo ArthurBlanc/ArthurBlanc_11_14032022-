@@ -105,7 +105,7 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	.accordion {
+	.collapse {
 		@include desktop-breakpoint {
 			border-radius: 0.625rem;
 		}

@@ -3,27 +3,27 @@ import chevron from '../../assets/chevron.svg'
 
 import './style.scss'
 
-function Accordion(props) {
-	/* This is setting the initial state of the accordion. */
+function Collapse(props) {
+	/* This is setting the initial state of the collapse. */
 	const [setActive, setActiveState] = useState('')
-	/* This is setting the initial height of the accordion to 0px. */
+	/* This is setting the initial height of the collapse to 0px. */
 	const [setHeight, setHeightState] = useState('0px')
 	/* This is setting the initial state of the rotate class. */
-	const [setRotate, setRotateState] = useState('accordion-icon')
+	const [setRotate, setRotateState] = useState('collapse-icon')
 
 	const content = useRef(null)
 
 	/**
-	 * The function toggles the accordion by changing the active state, the height state, and the rotate
+	 * The function toggles the collapse by changing the active state, the height state, and the rotate
 	 * state
 	 */
-	function toggleAccordion() {
+	function toggleCollapse() {
 		setActiveState(setActive === '' ? 'active' : '')
 		setHeightState(
 			setActive === 'active' ? '0px' : `${content.current.scrollHeight}px`
 		)
 		setRotateState(
-			setActive === 'active' ? 'accordion-icon' : 'accordion-icon rotate'
+			setActive === 'active' ? 'collapse-icon' : 'collapse-icon rotate'
 		)
 	}
 
@@ -40,21 +40,21 @@ function Accordion(props) {
 	}
 
 	return (
-		<div className="accordion-section">
-			{/* This is the button that is used to toggle the accordion. */}
+		<div className="collapse-section">
+			{/* This is the button that is used to toggle the collapse. */}
 			<button
-				className={`accordion ${setActive}`}
-				onClick={toggleAccordion}
+				className={`collapse ${setActive}`}
+				onClick={toggleCollapse}
 			>
-				<span className="accordion-title">{props.title}</span>
+				<span className="collapse-title">{props.title}</span>
 				<img src={chevron} className={`${setRotate}`} alt="" />
 			</button>
 			<div
 				ref={content}
 				style={{ maxHeight: `${setHeight}` }}
-				className="accordion-content"
+				className="collapse-content"
 			>
-				<div className="accordion-text">
+				<div className="collapse-text">
 					{contentArray.map((content, index) => (
 						<div key={`${content}-${index}`}>{content}</div>
 					))}
@@ -64,4 +64,4 @@ function Accordion(props) {
 	)
 }
 
-export default Accordion
+export default Collapse
