@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom'
+import Error from '../../components/Error'
 import { useEffect } from 'react'
-
-import './style.scss'
 
 function Error404() {
 	/* This is a React Hook, changing the title of the page. */
@@ -10,16 +8,11 @@ function Error404() {
 	}, [])
 
 	return (
-		<section className="error404">
-			<h1 className="error404-title">404</h1>
-			<h2 className="error404-subtitle">
-				Oups! La page que <br className="error404-subtitle-br" />
-				vous demandez n'existe pas.
-			</h2>
-			<Link className="error404-link" to="/">
-				Retourner sur la page d'accueil
-			</Link>
-		</section>
+		<Error
+			title="404"
+			subtitle="Oups! La page que "
+			subtitle2="vous demandez n'existe pas."
+		/>
 	)
 }
 
