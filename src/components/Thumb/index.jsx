@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom'
+
 import './style.scss'
 
-function Thumb(props) {
+function Thumb({ link, cover, title }) {
 	return (
 		<div className="thumb">
-			<Link to={props.link}>
+			<Link to={link}>
 				<div className="thumb-cover-wrapper">
-					<img src={props.cover} alt="" />
+					<img src={cover} alt="" />
 				</div>
-				<h2 className="thumb-title">{props.title}</h2>
+				<h2 className="thumb-title">{title}</h2>
 			</Link>
 		</div>
 	)

@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react'
+
 import chevron from '../../assets/chevron.svg'
 
 import './style.scss'
 
-function Collapse(props) {
+function Collapse({ title, content }) {
 	/* This is setting the initial state of the collapse. */
 	const [setActive, setActiveState] = useState('')
 	/* This is setting the initial height of the collapse to 0px. */
@@ -11,7 +12,8 @@ function Collapse(props) {
 	/* This is setting the initial state of the rotate class. */
 	const [setRotate, setRotateState] = useState('collapse-icon')
 
-	const content = useRef(null)
+	/* This is setting the contentCollapse to a ref. This is used to get the height of the content. */
+	const contentCollapse = useRef(null)
 
 	/**
 	 * The function toggles the collapse by changing the active state, the height state, and the rotate
@@ -20,7 +22,9 @@ function Collapse(props) {
 	function toggleCollapse() {
 		setActiveState(setActive === '' ? 'active' : '')
 		setHeightState(
-			setActive === 'active' ? '0px' : `${content.current.scrollHeight}px`
+			setActive === 'active'
+				? '0px'
+				: `${contentCollapse.current.scrollHeight}px`
 		)
 		setRotateState(
 			setActive === 'active' ? 'collapse-icon' : 'collapse-icon rotate'
@@ -31,11 +35,11 @@ function Collapse(props) {
 	content into the contentArray. If it is an array, it will loop through the array and push each item into
 	the contentArray. */
 	const contentArray = []
-	if (!Array.isArray(props.content)) {
-		contentArray.push(props.content)
+	if (!Array.isArray(content)) {
+		contentArray.push(content)
 	} else {
 		for (let i = 0; i < 9; i++) {
-			contentArray.push(props.content[i])
+			contentArray.push(content[i])
 		}
 	}
 
@@ -46,11 +50,11 @@ function Collapse(props) {
 				className={`collapse ${setActive}`}
 				onClick={toggleCollapse}
 			>
-				<span className="collapse-title">{props.title}</span>
+				<span className="collapse-title">{title}</span>
 				<img src={chevron} className={`${setRotate}`} alt="" />
 			</button>
 			<div
-				ref={content}
+				ref={contentCollapse}
 				style={{ maxHeight: `${setHeight}` }}
 				className="collapse-content"
 			>

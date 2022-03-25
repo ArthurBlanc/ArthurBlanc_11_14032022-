@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+
 import sliderArrow from '../../assets/slider-arrow.svg'
+
 import './style.scss'
 
 function Gallery({ images }) {

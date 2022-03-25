@@ -1,4 +1,5 @@
 import star from '../../assets/star.svg'
+
 import './style.scss'
 
 function Rating({ rating }) {

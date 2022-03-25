@@ -1,11 +1,8 @@
 import Error from '../../components/Error'
-import { useEffect } from 'react'
 
 function Error404() {
-	/* This is a React Hook, changing the title of the page. */
-	useEffect(() => {
-		document.title = '404 - Kasa'
-	}, [])
+	/* Setting the title of the page. */
+	document.title = '404 - Kasa'
 
 	return (
 		<Error

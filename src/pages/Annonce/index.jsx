@@ -1,7 +1,6 @@
-import { useParams, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
-import annonce from '../../assets/annonces.json'
+import Error404 from '../404'
 
 import Gallery from '../../components/Gallery'
 import Tag from '../../components/Tag'
@@ -10,78 +9,64 @@ import Collapse from '../../components/Collapse'
 
 import './style.scss'
 
-function Annonce() {
-	/* Fetching the id of the annonce from the URL. */
-	let params = useParams()
-	/* To get the annonce with the id that is in the URL. */
-	let annonceFiltered = annonce.filter(
-		(annonce) => annonce.id === params.annonceId
-	)
-	let thisAnnonce = annonceFiltered[0]
+function Annonce({ annonces, loading }) {
+	/* Getting the id of the annonce from the URL. */
+	const { annonceId } = useParams()
+	/* Looking for the annonce with the id that is in the URL. */
+	const thisAnnonce = annonces.find((annonce) => annonce.id === annonceId)
 
-	/* A React hook that allows you to navigate to a different page. */
-	let navigate = useNavigate()
-
-	useEffect(() => {
-		/* If thisAnnonce is undefined, navigate to 404 page. */
-		if (thisAnnonce === undefined) {
-			return navigate('/404')
-		}
-		/* This is a React Hook, changing the title of the page. */
+	/* Check if the annonce is exist and not loading. If it is not, we return the Error404 component. */
+	if (!thisAnnonce && !loading) {
+		return <Error404 />
+	} else {
+		/* Splitting the name of the host into firstName and lastName. */
+		const [firstName, lastName] = thisAnnonce.host.name.split(' ')
+		/* Setting the title of the page. */
 		document.title = thisAnnonce.title + ' - Kasa'
-	}, [thisAnnonce, navigate])
-
-	/* If thisAnnonce is undefined don't render the page. */
-	if (thisAnnonce === undefined) {
-		return null
-	}
-
-	/* Splitting the name of the host into firstName and lastName. */
-	let [firstName, lastName] = thisAnnonce.host.name.split(' ')
-
-	return (
-		<section>
-			<Gallery images={thisAnnonce.pictures} />
-			<div className="annonce-info-rating-host-wrapper">
-				<div className="annonce-info-wrapper">
-					<h1 className="annonce-title">{thisAnnonce.title}</h1>
-					<p className="annonce-location">{thisAnnonce.location}</p>
-					<div className="tag-wrapper">
-						{thisAnnonce.tags.map((tag, index) => (
-							<Tag tagName={tag} key={`${tag}-${index}`} />
-						))}
-					</div>
-				</div>
-
-				<div className="rating-host-wrapper">
-					<Rating rating={thisAnnonce.rating} />
-					<div className="host-wrapper">
-						<div className="host-name">
-							{firstName}
-							<br />
-							{lastName}
+		return (
+			<section>
+				<Gallery images={thisAnnonce.pictures} />
+				<div className="annonce-info-rating-host-wrapper">
+					<div className="annonce-info-wrapper">
+						<h1 className="annonce-title">{thisAnnonce.title}</h1>
+						<p className="annonce-location">
+							{thisAnnonce.location}
+						</p>
+						<div className="tag-wrapper">
+							{thisAnnonce.tags.map((tag, index) => (
+								<Tag tagName={tag} key={`${tag}-${index}`} />
+							))}
 						</div>
-						<img
-							className="host-picture"
-							src={thisAnnonce.host.picture}
-							alt="Host"
-						/>
+					</div>
+					<div className="rating-host-wrapper">
+						<Rating rating={thisAnnonce.rating} />
+						<div className="host-wrapper">
+							<div className="host-name">
+								{firstName}
+								<br />
+								{lastName}
+							</div>
+							<img
+								className="host-picture"
+								src={thisAnnonce.host.picture}
+								alt="Host"
+							/>
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div className="description-equipments-wrapper">
-				<Collapse
-					title="Description"
-					content={thisAnnonce.description}
-				/>
-				<Collapse
-					title="Équipements"
-					content={thisAnnonce.equipments}
-				/>
-			</div>
-		</section>
-	)
+				<div className="description-equipments-wrapper">
+					<Collapse
+						title="Description"
+						content={thisAnnonce.description}
+					/>
+					<Collapse
+						title="Équipements"
+						content={thisAnnonce.equipments}
+					/>
+				</div>
+			</section>
+		)
+	}
 }
 
 export default Annonce

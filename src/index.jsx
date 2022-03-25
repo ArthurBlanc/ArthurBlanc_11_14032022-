@@ -1,33 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import App from './App'
 
-import Header from './components/Header'
-import Footer from './components/Footer'
-
-import Home from './pages/Home'
-import Error404 from './pages/404'
-import APropos from './pages/A-Propos'
-import Annonce from './pages/Annonce'
-
-import './style.scss'
-
-ReactDOM.render(
-	<React.StrictMode>
-		<Router>
-			<Header />
-			<Routes>
-				{/* This is a route definition. It tells the router to match the URL `/` and render the `<Home />` component. */}
-				<Route exact path="/" element={<Home />} />
-				{/* It tells the router to match the URL `/a-propos` and render the `<APropos />` component. */}
-				<Route path="/a-propos" element={<APropos />} />
-				{/* It tells the router to match the URL `/annonce/:annonceId` and render the `<Annonce />` component. */}
-				<Route path="/annonce/:annonceId" element={<Annonce />} />
-				{/* It tells the router to match any URL and render the `<Error404 />` component. */}
-				<Route path="*" element={<Error404 />} />
-			</Routes>
-			<Footer />
-		</Router>
-	</React.StrictMode>,
-	document.getElementById('root')
-)
+/* Rendering the App component into the root element of the index.html file. */
+ReactDOM.render(<App />, document.getElementById('root'))

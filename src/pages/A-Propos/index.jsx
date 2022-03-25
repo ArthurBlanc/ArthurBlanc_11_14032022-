@@ -1,14 +1,12 @@
-import { useEffect } from 'react'
+import aproposBanner from '../../assets/apropos-banner.jpg'
 
 import Collapse from '../../components/Collapse'
-import aproposBanner from '../../assets/apropos-banner.jpg'
+
 import './style.scss'
 
 function APropos() {
-	/* This is a React Hook, changing the title of the page. */
-	useEffect(() => {
-		document.title = 'A Propos - Kasa'
-	}, [])
+	/* Setting the title of the page. */
+	document.title = 'A Propos - Kasa'
 
 	const aproposData = [
 		{
@@ -42,6 +40,7 @@ function APropos() {
 					alt="Banner"
 				/>
 			</h1>
+			{/* Looping through the aproposData array and displaying each item as a Collapse. */}
 			{aproposData.map((apropos, index) => (
 				<Collapse
 					title={apropos.title}
