@@ -1,12 +1,23 @@
 import homeBanner from '../../assets/home-banner.jpg'
 
 import Thumb from '../../components/Thumb'
+import LoadingScreen from '../../components/Loading'
+import Error from '../../components/Error'
 
 import './style.scss'
 
-function Home({ annonces }) {
+function Home({ annonces, error, loading }) {
 	/* Setting the title of the page. */
 	document.title = 'Accueil - Kasa'
+
+	/* Rendering the `<LoadingScreen />` component if the state variable `error` is `false` and the state variable `loading` is `true`. */
+	if (!error && loading) {
+		return <LoadingScreen />
+	}
+	/* Rendering the `<Error />` component if the state variable `error` is `true` and the state variable `loading` is `true`. */
+	if (error && loading) {
+		return <Error />
+	}
 
 	return (
 		<section className="home">

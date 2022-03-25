@@ -6,14 +6,25 @@ import Gallery from '../../components/Gallery'
 import Tag from '../../components/Tag'
 import Rating from '../../components/Rating'
 import Collapse from '../../components/Collapse'
+import LoadingScreen from '../../components/Loading'
+import Error from '../../components/Error'
 
 import './style.scss'
 
-function Annonce({ annonces, loading }) {
+function Annonce({ annonces, error, loading }) {
 	/* Getting the id of the annonce from the URL. */
 	const { annonceId } = useParams()
 	/* Looking for the annonce with the id that is in the URL. */
 	const thisAnnonce = annonces.find((annonce) => annonce.id === annonceId)
+
+	/* Rendering the `<LoadingScreen />` component if the state variable `error` is `false` and the state variable `loading` is `true`. */
+	if (!error && loading) {
+		return <LoadingScreen />
+	}
+	/* Rendering the `<Error />` component if the state variable `error` is `true` and the state variable `loading` is `true`. */
+	if (error && loading) {
+		return <Error />
+	}
 
 	/* Check if the annonce is exist and not loading. If it is not, we return the Error404 component. */
 	if (!thisAnnonce && !loading) {
