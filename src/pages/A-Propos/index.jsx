@@ -45,7 +45,7 @@ function APropos() {
 				<Collapse
 					title={apropos.title}
 					content={apropos.content}
-					key={apropos.title + '-' + index}
+					key={`${apropos.title}-${index}`}
 				/>
 			))}
 		</section>

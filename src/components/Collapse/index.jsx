@@ -19,7 +19,7 @@ function Collapse({ title, content }) {
 	 * The function toggles the collapse by changing the active state, the height state, and the rotate
 	 * state
 	 */
-	function toggleCollapse() {
+	const toggleCollapse = () => {
 		setActiveState(setActive === '' ? 'active' : '')
 		setHeightState(
 			setActive === 'active'

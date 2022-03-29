@@ -1,34 +1,29 @@
 import { useParams } from 'react-router-dom'
-
-import Error404 from '../404'
+import { useEffect } from 'react'
 
 import Gallery from '../../components/Gallery'
 import Tag from '../../components/Tag'
 import Rating from '../../components/Rating'
 import Collapse from '../../components/Collapse'
-import LoadingScreen from '../../components/Loading'
-import Error from '../../components/Error'
 
 import './style.scss'
 
-function Annonce({ annonces, error, loading }) {
+function Annonce({ annonces, setIdAnnonce, setError404 }) {
 	/* Getting the id of the annonce from the URL. */
 	const { annonceId } = useParams()
 	/* Looking for the annonce with the id that is in the URL. */
 	const thisAnnonce = annonces.find((annonce) => annonce.id === annonceId)
 
-	/* Rendering the `<LoadingScreen />` component if the state variable `error` is `false` and the state variable `loading` is `true`. */
-	if (!error && loading) {
-		return <LoadingScreen />
-	}
-	/* Rendering the `<Error />` component if the state variable `error` is `true` and the state variable `loading` is `true`. */
-	if (error && loading) {
-		return <Error />
-	}
+	useEffect(() => {
+		setIdAnnonce(thisAnnonce)
+		if (!thisAnnonce) {
+			setError404(true)
+		}
+	}, [setIdAnnonce, setError404, thisAnnonce])
 
 	/* Check if the annonce is exist and not loading. If it is not, we return the Error404 component. */
-	if (!thisAnnonce && !loading) {
-		return <Error404 />
+	if (!thisAnnonce) {
+		return null
 	} else {
 		/* Splitting the name of the host into firstName and lastName. */
 		const [firstName, lastName] = thisAnnonce.host.name.split(' ')

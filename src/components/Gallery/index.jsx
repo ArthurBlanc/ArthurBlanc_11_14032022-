@@ -39,22 +39,22 @@ function Gallery({ images }) {
 		<div className="gallery">
 			{/* This is two ternary operator that checks if the length of the images array is greater than 1. If it
 			is, then it will render the arrow. Otherwise, it will not render the arrow. */}
-			{length > 1 ? (
+			{length > 1 && (
 				<img
 					src={sliderArrow}
 					className="left-arrow"
 					onClick={previousSlide}
 					alt="Previous Arrow"
 				/>
-			) : null}
-			{length > 1 ? (
+			)}
+			{length > 1 && (
 				<img
 					src={sliderArrow}
 					className="right-arrow"
 					onClick={nextSlide}
 					alt="Next Arrow"
 				/>
-			) : null}
+			)}
 			{images.map((slider, index) => {
 				return (
 					/* This is a ternary operator that checks if the index of the image is equal to the current value.
@@ -62,7 +62,7 @@ function Gallery({ images }) {
 					inactive. */
 					<div
 						className={index === current ? 'slide active' : 'slide'}
-						key={index}
+						key={`slider-${index}`}
 					>
 						{index === current && (
 							<img

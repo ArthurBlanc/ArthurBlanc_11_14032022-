@@ -11,17 +11,25 @@ import Error404 from './pages/404'
 import APropos from './pages/A-Propos'
 import Annonce from './pages/Annonce'
 
+import LoadingScreen from '././components/Loading'
+import Error from '././components/Error'
+
 import './style.scss'
 
 function App() {
 	/* Creating a state variable `annonces` and initializing it with an empty array. */
 	const [annonces, setAnnonces] = useState([])
 	/* Creating a state variable `loading` and initializing it with `true`. */
-	const [loading, setLoading] = useState(true)
+	const [loading, setLoading] = useState(false)
 	/* Creating a state variable `error` and initializing it with `false`. */
 	const [error, setError] = useState(false)
+	/* Creating a state variable `error404` and initializing it with `false`. */
+	const [idAnnonce, setIdAnnonce] = useState(false)
+	/* Creating a state variable `error404` and initializing it with `false`. */
+	const [error404, setError404] = useState(false)
 
 	useEffect(() => {
+		setLoading(true)
 		/* Fetching the data from the database. */
 		fetch(window.location.origin + '/annonces.json')
 			.then((response) => {
@@ -42,6 +50,7 @@ function App() {
 				setError(true)
 			})
 	}, [])
+
 	return (
 		<React.StrictMode>
 			<Router>
@@ -52,29 +61,43 @@ function App() {
 						exact
 						path="/"
 						element={
-							<Home
-								annonces={annonces}
-								loading={loading}
-								error={error}
-							/>
+							<>
+								<Home annonces={annonces} />
+								{(!error && loading && <LoadingScreen />) ||
+									(error && loading && <Error />)}
+							</>
 						}
 					/>
 					{/* It tells the router to match the URL `/annonce/:annonceId` and render the `<Annonce />` component. */}
 					<Route
+						exact
 						path="/annonce/:annonceId"
 						element={
-							<Annonce
-								annonces={annonces}
-								loading={loading}
-								error={error}
-							/>
+							<>
+								<Annonce
+									annonces={annonces}
+									setIdAnnonce={setIdAnnonce}
+									setError404={setError404}
+								/>
+								{(!error && loading && <LoadingScreen />) ||
+									(error && loading && <Error />) ||
+									(error404 && !loading && !error && (
+										<Error404
+											idAnnonce={idAnnonce}
+											setError404={setError404}
+											time={50}
+										/>
+									))}
+							</>
 						}
 					/>
-
 					{/* It tells the router to match the URL `/a-propos` and render the `<APropos />` component. */}
-					<Route path="/a-propos" element={<APropos />} />
+					<Route exact path="/a-propos" element={<APropos />} />
 					{/* It tells the router to match any URL and render the `<Error404 />` component. */}
-					<Route path="*" element={<Error404 />} />
+					<Route
+						path="*"
+						element={<Error404 setError404={setError404} />}
+					/>
 				</Routes>
 				<Footer />
 			</Router>
