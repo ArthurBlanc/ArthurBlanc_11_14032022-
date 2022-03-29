@@ -1,8 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+
+import { AnnoncesContext } from '../../context'
 
 import Error from '../../components/Error'
 
-function Error404({ idAnnonce, setError404, time = 0 }) {
+function Error404() {
+	const { idAnnonce, setError404 } = useContext(AnnoncesContext)
+
 	/* Setting the title of the page. */
 	document.title = '404 - Kasa'
 	/* Creating a state variable called `show` and setting it to `false`. */
@@ -12,11 +16,11 @@ function Error404({ idAnnonce, setError404, time = 0 }) {
 		/* Set a timeout to delay the showing of the loading component. */
 		const timeShow = setTimeout(() => {
 			setShow(true)
-		}, time)
+		}, 10)
 		return () => {
 			clearTimeout(timeShow)
 		}
-	}, [time])
+	}, [])
 
 	useEffect(() => {
 		if (idAnnonce) {

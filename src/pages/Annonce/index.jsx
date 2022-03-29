@@ -1,5 +1,6 @@
+import { useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import { useEffect } from 'react'
+import { AnnoncesContext } from '../../context'
 
 import Gallery from '../../components/Gallery'
 import Tag from '../../components/Tag'
@@ -8,7 +9,8 @@ import Collapse from '../../components/Collapse'
 
 import './style.scss'
 
-function Annonce({ annonces, setIdAnnonce, setError404 }) {
+function Annonce() {
+	const { annonces, setIdAnnonce, setError404 } = useContext(AnnoncesContext)
 	/* Getting the id of the annonce from the URL. */
 	const { annonceId } = useParams()
 	/* Looking for the annonce with the id that is in the URL. */

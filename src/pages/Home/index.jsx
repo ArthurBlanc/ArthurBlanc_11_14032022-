@@ -1,12 +1,18 @@
+import { useContext } from 'react'
+
+import { AnnoncesContext } from '../../context'
+
 import homeBanner from '../../assets/home-banner.jpg'
 
 import Thumb from '../../components/Thumb'
 
 import './style.scss'
 
-function Home({ annonces }) {
+function Home() {
 	/* Setting the title of the page. */
 	document.title = 'Accueil - Kasa'
+
+	const { annonces } = useContext(AnnoncesContext)
 
 	if (annonces.length === 0) {
 		return null

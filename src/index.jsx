@@ -1,6 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import Router from './Router'
+
+import { AnnoncesProvider } from './context'
 
 /* Rendering the App component into the root element of the index.html file. */
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+	<AnnoncesProvider>
+		<Router />
+	</AnnoncesProvider>,
+	document.getElementById('root')
+)
