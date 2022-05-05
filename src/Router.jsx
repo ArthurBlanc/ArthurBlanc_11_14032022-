@@ -15,8 +15,6 @@ import Error from './components/Error'
 
 import { AnnoncesContext } from './context'
 
-import './style.scss'
-
 function Router() {
 	const { loading, error, error404 } = useContext(AnnoncesContext)
 
