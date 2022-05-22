@@ -2,16 +2,10 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import Router from './Router'
 
-import { AnnoncesProvider } from './context'
-
 import './style.scss'
 
 const container = document.getElementById('root')
 const root = createRoot(container)
 
 /* Rendering the App component into the root element of the index.html file. */
-root.render(
-	<AnnoncesProvider>
-		<Router />
-	</AnnoncesProvider>
-)
+root.render(<Router />)

@@ -1,6 +1,9 @@
-import { useEffect, useContext } from 'react'
+import { useFetch } from '../../utils/useFetch'
 import { useParams } from 'react-router-dom'
-import { AnnoncesContext } from '../../context'
+
+import LoadingScreen from '../../components/Loading'
+import Error from '../../components/Error'
+import Error404 from '../404'
 
 import Gallery from '../../components/Gallery'
 import Tag from '../../components/Tag'
@@ -10,22 +13,32 @@ import Collapse from '../../components/Collapse'
 import './style.scss'
 
 function Annonce() {
-	const { annonces, setIdAnnonce, setError404 } = useContext(AnnoncesContext)
+	/* Fetching the data from the json file. */
+	const annonces = useFetch(window.location.origin + '/annonces.json')
+
 	/* Getting the id of the annonce from the URL. */
 	const { annonceId } = useParams()
 	/* Looking for the annonce with the id that is in the URL. */
-	const thisAnnonce = annonces.find((annonce) => annonce.id === annonceId)
+	let thisAnnonce
+	if (annonces.fetchedData) {
+		thisAnnonce = annonces.fetchedData.find(
+			(annonce) => annonce.id === annonceId
+		)
+	}
 
-	useEffect(() => {
-		setIdAnnonce(thisAnnonce)
-		if (!thisAnnonce) {
-			setError404(true)
-		}
-	}, [setIdAnnonce, setError404, thisAnnonce])
+	/* Checking if the data is loading and if it is, it will display a loading screen. */
+	if (annonces.isLoading) {
+		return <LoadingScreen />
+	}
+
+	/* Checking if there is an error and if there is, it will display the Error component. */
+	if (annonces.error) {
+		return <Error />
+	}
 
 	/* Check if the annonce is exist and not loading. If it is not, we return the Error404 component. */
 	if (!thisAnnonce) {
-		return null
+		return <Error404 />
 	} else {
 		/* Splitting the name of the host into firstName and lastName. */
 		const [firstName, lastName] = thisAnnonce.host.name.split(' ')
