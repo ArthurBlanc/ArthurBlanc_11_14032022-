@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-
 import Error from '../../components/Error'
 
 function Error404() {
