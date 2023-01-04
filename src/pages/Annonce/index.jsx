@@ -14,7 +14,7 @@ import './style.scss'
 
 function Annonce() {
 	/* Fetching the data from the json file. */
-	const annonces = useFetch(window.location.origin + 'Kasa/annonces.json')
+	const annonces = useFetch(window.location.origin + '/Kasa/annonces.json')
 
 	/* Getting the id of the annonce from the URL. */
 	const { annonceId } = useParams()

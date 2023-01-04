@@ -14,7 +14,7 @@ function Home() {
 	document.title = 'Accueil - Kasa'
 
 	/* Fetching the data from the json file. */
-	const annonces = useFetch(window.location.origin + 'Kasa/annonces.json')
+	const annonces = useFetch(window.location.origin + '/Kasa/annonces.json')
 
 	/* Checking if the data is loading and if it is, it will display a loading screen. */
 	if (annonces.isLoading) {
