@@ -13,7 +13,7 @@ import Annonce from './pages/Annonce'
 function Router() {
 	return (
 		<React.StrictMode>
-			<BrowserRouter>
+			<BrowserRouter basename="/Kasa">
 				<Header />
 				<Routes>
 					{/* This is a route definition. It tells the router to match the URL `/` and render the `<Home />` component. */}
