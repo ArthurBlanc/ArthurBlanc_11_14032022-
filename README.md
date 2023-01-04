@@ -3,6 +3,8 @@
 ![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)
 [![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://github.com/ArthurBlanc)
 
+[Live demo](https://arthurblanc.github.io/Kasa/)
+
 ## Description :
 
 > Implémentez le front end d'une application de location de logements.
