@@ -80,7 +80,7 @@ Mon rôle a été de développer le front-end de l’application, en utilisant l
 -   `npm start` ou `yarn start`
 
 Le front-end sera lancé à l'URL:
-`http://localhost:3000/`.
+`http://localhost:3000/Kasa/`.
 
 ## Développé avec :
 
@@ -172,7 +172,7 @@ My role was to develop the front-end of the application, using React components,
 -   `npm start` or `yarn start`
 
 Front-end will launch at URL:
-`http://localhost:3000`.
+`http://localhost:3000/Kasa/`.
 
 ## Built With:
 
